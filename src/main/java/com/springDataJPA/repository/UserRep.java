@@ -1,4 +1,4 @@
-package com.springDataJPA.repo;
+package com.springDataJPA.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.springDataJPA.entity.UserEntity;
-import com.springDataJPA.repo.UserRep;
+import com.springDataJPA.repository.UserRep;
 
 @Service
 public class UserSeviceImpl implements UserService {
@@ -59,7 +59,6 @@ public class UserSeviceImpl implements UserService {
 	public boolean deleteUser(Long id) {
 		userRepo.deleteById(id);
 		return true;
-		
 	}
 	
 
