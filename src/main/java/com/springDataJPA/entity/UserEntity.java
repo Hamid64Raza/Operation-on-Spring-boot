@@ -18,6 +18,8 @@ public class UserEntity {
 	
 	private int marks; // added 
 	
+	private int hobbies;
+	
 	public Long getId() {
 		return id;
 	}
