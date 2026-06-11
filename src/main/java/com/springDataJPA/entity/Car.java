@@ -1,10 +1,9 @@
 package com.springDataJPA.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -20,6 +19,7 @@ public class Car {
     private  String brand;
     private  Integer price;
     private  String model;
+    private Date   dayOfPurchase;
 
 
 }
