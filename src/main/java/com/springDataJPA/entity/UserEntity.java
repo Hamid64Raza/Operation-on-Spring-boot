@@ -16,6 +16,8 @@ public class UserEntity {
 	private int age;
 	private Long contactNo;
 	
+	private int marks; // added 
+	
 	public Long getId() {
 		return id;
 	}
