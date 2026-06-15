@@ -2,6 +2,8 @@ package com.springDataJPA.controller;
 
 import com.springDataJPA.entity.Car;
 import com.springDataJPA.service.CarService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
+@Tag(
+        name = "Car Management APIs",
+        description = "Operations related to Car Management"
+)
 public class CarController {
     private CarService carService;
     public  CarController(CarService carService){
@@ -20,6 +26,10 @@ public class CarController {
     }
 
     @PostMapping("/saveCar")
+    @Operation(
+            summary = "Save Car",
+            description = "Creates a new car record"
+    )
     public ResponseEntity<Car> saveCar(@RequestBody Car car){
         Car carResult= carService.saveCar(car);
         return  new ResponseEntity<>(carResult, HttpStatus.OK);

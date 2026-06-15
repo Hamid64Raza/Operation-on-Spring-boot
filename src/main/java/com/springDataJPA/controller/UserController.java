@@ -2,6 +2,8 @@ package com.springDataJPA.controller;
 
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +20,10 @@ import com.springDataJPA.service.UserService;
 
 @RestController
 @RequestMapping("/api/v1")
+@Tag(
+		name = "User Management APIs",
+		description = "Operations related to User Management"
+)
 public class UserController {
 	
 	private UserService userService;
@@ -27,6 +33,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/saveUser")
+	@Operation(
+			summary = "Save User",
+			description = "Creates a new user in the database"
+	)
 	public ResponseEntity<?> saveUser(@RequestBody UserEntity entity){
 		
 		UserEntity saveUser = userService.saveUser(entity);
@@ -39,6 +49,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/getUsers")
+	@Operation(
+			summary = "Get All Users",
+			description = "Returns all users from database"
+	)
 	public ResponseEntity<List<UserEntity>> getAllUser(){
 		
 		List<UserEntity> users = userService.getUser();
